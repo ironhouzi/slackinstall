@@ -64,3 +64,4 @@ Slackware install proc
 18 Configure vim
 19 Disable login/out sounds
 20 symbolic links for .bashrc .bash_ps1 .vimrc .vim/ in root/
+21 tmux
