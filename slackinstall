@@ -1,0 +1,66 @@
+Slackware install proc
+
+1. Install from USB.
+2. adduser
+    - add to usual groups + wheel
+3. remap esc (dumpkeys > <newmapfile> && edit <newmapfile> and change keykode58 && loadkeys <newmapfile>)
+4. visudo
+5. Configure SSD
+    - modify ssd disk in fstab with: noatime,discard 0 1
+    - add to fstab: tmpfs /tmp tmpfs nodev,nosuid,size=7G 0 0
+5. Configure LILO
+7. Install multilib
+    - add to /etc/slackpkg/blacklist: [0-9]+alien
+8. Install NVIDIA driver
+9. Install sbopkg
+    - configure to use tmpfs (/dev/shm) for build/compile
+10. Install bash-completion
+    - configure
+    - copy /usr/doc/git/contrib/completion/git-completion.bash to /etc/bash_completion.d
+11. Install ssh agent/keychain
+    - configure (eval $(keychain --eval --agents ssh -Q --quiet id_rsa))
+12. Disable nepomuk
+    - ~/.config/akonadi/akonadiserverrc:
+  StartServer=false
+13. export LANG=en_US.UTF-8 in /etc/profile.d/lang.sh
+14. Configure KDE keyboard shortcuts:
+    - CapsCtrl
+    - install xcape and add to .bashrc: xcape -e 'Caps_Lock=Escape;'
+    - Change layout with scrllck
+    - add NO(rwegian) layout
+    - switching policy: application
+    - show alt layout with caps led
+15. Install Java (buildscripts in /extra from install media)
+16. Install applications:
+    - flash from /extra
+    - yakuake
+    - sshfs
+	. configure
+    - vlc (alien)
+    - skype
+    - googletalk_plugin.sbo
+    - fonts from sbo (DejaVu Sans Mono)
+    - spotify	    DEPRICATED IN 14!!
+    - qvim compiled with:
+./configure --prefix=/usr/ --enable-pythoninterp --with-python-config-dir=/usr/lib/python/config --enable-perlinterp --disable-tclinterp --enable-multibyte --enable-cscope  --enable-rubyinterp --with-features=huge --with-vim-name=qvim --enable-gui=qt
+	* pathogen
+	* snipmate
+	* fugitive
+	* nerdtree
+	* tagbar
+	* autoclose
+	* rainbowparenthesis
+	* surround
+	* ctrl-p
+	* powerline
+
+17 Configure FF
+    - pentadactyl
+    - adblock
+    - lastpass
+    - sabnzbd
+    - sync
+    - disable java
+18 Configure vim
+19 Disable login/out sounds
+20 symbolic links for .bashrc .bash_ps1 .vimrc .vim/ in root/
